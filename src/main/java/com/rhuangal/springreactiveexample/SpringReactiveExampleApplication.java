@@ -24,8 +24,7 @@ public class SpringReactiveExampleApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
-		// save list Customers
+	    /* Save data for test */
 		productRepository.saveAll(Arrays.asList(new Product(Long.valueOf("1"), "LAPICERO", BigDecimal.valueOf(4.00),"STABILO COLOR AZUL", "/lapicero"),
 				new Product(Long.valueOf("2"), "TEMPERA", BigDecimal.valueOf(3.00),"COLOR ROJO", "/tempera"),
 				new Product(Long.valueOf("3"), "CARTULINA", BigDecimal.valueOf(2.30),"COLOR AMARILLO", "/catulina"),
