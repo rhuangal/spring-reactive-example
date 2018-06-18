@@ -22,13 +22,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Flux<Product> dummy() {
         return Flux
-                .just(new Product("lapicero punta fina",new BigDecimal(4.00)),
-                        new Product("hojas bond 80 gr.", new BigDecimal(12.90)),
-                        new Product("cartulina pliego", new BigDecimal(2.90)))
+                .just(new Product("lapicero punta fina", BigDecimal.valueOf(4.00)),
+                        new Product("hojas bond 80 gr.", BigDecimal.valueOf(12.90)),
+                        new Product("cartulina pliego", BigDecimal.valueOf(3.00)))
                 .concatMap(pro -> Flux.just(pro).delayElements(Duration.ofSeconds(3)))
-                .doOnNext(pro -> {
-                    log.debug("producto :");
-                });
+                .doOnNext(pro -> log.debug("producto : "+pro));
     }
 
     @Override
